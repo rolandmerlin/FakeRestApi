@@ -4,6 +4,10 @@ A quoi, cela sert-il ?
 
 Elle permet de rapidement avoir une API Rest pour la coneption de vos conceptions Front-end 
 
+Téléchargement des dépendances :
+
+npm install
+
 En mode de développement, décommenter les lignes :
 
 //const cors = require('cors')
