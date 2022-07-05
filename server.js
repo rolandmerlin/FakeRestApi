@@ -11,7 +11,7 @@ app.use(cors())
 
 const {fakerQuery} = require('./controllers/fakerQuery')
 
-//app.use(express.static('./dist'))
+app.use(express.static('./dist'))
 
 const products = new fakerQuery({
     data:[

@@ -47,11 +47,11 @@ class fakerQuery {
         for (const d of keys){
             dt[d] = data[d] || undefined
             if (dt[d]!=undefined){
-                console.log('key '+d,'"',dt[d],'" type ',this.bdd.struct[d]);
+                
                 switch (this.bdd.struct[d]){
                     case 'integer':
                         if (!/^[0-9]*$/.test(dt[d])) {
-                            console.log('Type non valide');
+                            console.log('key '+d,'"',dt[d],'" type ',this.bdd.struct[d],' Warning Donnée non valide');
                             throw 'key '+d+' n\'est pas entier'
                         }
                 }
