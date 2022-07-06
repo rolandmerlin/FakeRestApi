@@ -1,15 +1,14 @@
-const { truncate } = require("fs")
-
 class fakerQuery {
     constructor(fakerData){
-        this.bdd = fakerData
         this.id = 1
-        for (const d of fakerData.data){
-            if (typeof d.id == 'undefined'){ // Ajout le champ id s'il n'est pas présent
-                d.id=this.id+0
+        for (const k in fakerData.data){
+            fakerData.data[k].modifyAt=0
+            if (typeof fakerData.data[k].id == 'undefined'){
+                fakerData.data[k].id=this.id+0
                 this.id++
-            } else if (d.id>this.id) this.id = d.id + 1 // Permet de définir la valeur de l'autoincrément
+            } else if (fakerData.data[k].id>this.id) this.id = fakerData.data[k].id + 1
         }
+        this.bdd = fakerData        
     }
     query_get(){ return this.bdd.data } // QueryAll
     query_getid(id){                    // Query ID = ?
